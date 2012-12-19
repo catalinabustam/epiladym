@@ -1,0 +1,15 @@
+<h4>5. Conclusiones generales</h4>
+
+<%= rf.simple_fields_for :conclusion, @report.conclusion do |f| %>
+
+  <%= f.input :observaciones, label: 'Observaciones Adicionales:', :input_html => { :rows => 3 }  %>
+
+  <%= f.input :rm, collection: ["normal", "anormal"], as: :radio_buttons, item_wrapper_class: 'inline',
+                    label: 'RM Normal o anormal?' %>
+
+  <%= f.input :sospecha, label: 'Diagnóstico Radiológico', :input_html => { :rows => 3 } %>
+
+  <%= f.input :correlacion, collection: ["si", "no"], as: :radio_buttons, item_wrapper_class: 'inline',
+                    label: 'Correlación clínico imaginológica' %>
+
+<% end %>

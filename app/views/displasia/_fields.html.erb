@@ -1,0 +1,30 @@
+<h4>2. Displasia cortical focal (DCF)</h4>
+<small>Zonas a ser inspeccionadas: Frontal-parietal>temporal>occipital</small>
+<h6>Hallazgos a explorar:</h6>
+
+<%= rf.simple_fields_for :displasium, @report.displasium do |f| %>
+
+  <%= f.input :hiperintensidad, collection: @laterality, as: :radio_buttons, item_wrapper_class: 'inline',
+                    label: 'Hiperintensidad sustancia blanca en FLAIR y T2:' %>
+
+  <%= f.input :diferencicacion_grisblanca, collection: @laterality, as: :radio_buttons, item_wrapper_class: 'inline',
+                    label: 'Diferenciación de sustancia gris y blanca. Anormal?' %>
+
+  <%= f.input :engrosamiento, collection: @laterality, as: :radio_buttons, item_wrapper_class: 'inline',
+                    label: 'Engrosamiento focal cortical:' %>
+
+  <%= f.input :transmato, collection: @laterality, as: :radio_buttons, item_wrapper_class: 'inline',
+                    label: 'Signo transmanto en FLAIR:' %>
+
+  <%= f.input :circunvoluciones, collection: @laterality, as: :radio_buttons, item_wrapper_class: 'inline',
+                    label: 'Patrón de circunvoluciones y surcos. Anormal?:' %>
+
+  <%= f.input :reformateo, collection: @laterality, as: :radio_buttons, item_wrapper_class: 'inline',
+                    label: 'Reformateo curvilíneo: patrón de surcos. Anormal?' %>
+
+  <h6>Conclusión: Displasia cortical en</h6>
+  <%= f.input :discircunvolucion, label: 'Circunvolución:'%>
+  <%= f.input :dislobulo, collection: @lobe, as: :select, default: 1,label: 'Lóbulo' %>
+  <%= f.input :dishemisferio, collection: @hemisphere, as: :select, default: 1 ,label: 'Hemisferio' %>
+
+<% end %>

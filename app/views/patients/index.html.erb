@@ -1,0 +1,29 @@
+<div class="page-header">
+  <h2>Listado de pacientes</h2>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Paciente</th>
+      <!--<th>Edad</th>
+      <th>Sexo</th>-->
+      <th>Lecturas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><strong><%= patient.code %></strong></td>
+        <!--<td><%= patient.age %></td> 
+        <td><%= patient.sex %></td> -->
+        <td>
+          <%= equip_button(patient,'1.5T') %>
+          <%= equip_button(patient,'3T') %>
+        </td>
+		<td><%=link_to "mostrar reportes", patient_reports_path(patient), class: 'btn btn-primary enabled' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

@@ -1,0 +1,104 @@
+<div class="page-header lead">Reporte para el paciente <strong><%= @patient.code %></strong> en equipo <strong><%=@report.equipment %></strong></div>
+
+<dl class="dl-horizontal">
+  <dt><strong>Radiologo:</strong></dt>
+  <dd><%=@report.user.email %></dd>
+  <dt><strong>Fecha del reporte:</strong></dt>
+  <dd><%=@report.created_at %></dd>
+</dl>
+
+<h4>1. Esclerosis hipocampal:</h4>
+<dl class="dl-horizontal">
+	<dt><strong>Atrofia hipocampo a ojo desnudo </strong></dt>
+	<dd><%=@report.esclerosi.atrofia_sunj %></dd>
+	<dt><strong>Hiperintensidad en T2 y FLAIR.</strong></dt>
+	<dd><%==@report.esclerosi.hiperintensidad%></dd>
+	<dt><strong>Superficie y estructura interna del hipocampo en T1. Anormal?</dt></strong>
+	<dd><%=@report.esclerosi.estructura_anormal%></dd>
+	<dt><strong>Escriba el hallazgo extra hipocampal encontrado:</dt></strong>
+	<dd><%=@report.esclerosi.hallazgos_extra%></dd>
+	<dt><strong>Esclerosis hipocampal:</strong></dt>
+	<dd><%=@report.esclerosi.esclerosis%></dd>
+</dl>
+<h6>Conclusión</h6>
+<h4>2. Displasia cortical focal (DCF)</h4>
+	<dl class="dl-horizontal">
+	<dt><strong>Hiperintensidad sustancia blanca en FLAIR y T2:</strong></dt>
+	<dd><%=@report.displasium.hiperintensidad%></dd>
+	<dt><strong>Diferenciación de sustancia gris y blanca. Anormal?</strong></dt>
+	<dd><%=@report.displasium.diferencicacion_grisblanca%></dd>
+	<dt><strong>Engrosamiento focal cortical</strong></dt>
+	<dd><%=@report.displasium.engrosamiento%></dd>
+	<dt><strong>Signo transmanto en FLAIR</strong></dt>
+	<dd><%=@report.displasium.transmato%></dd>
+	<dt><strong>Patrón de circunvoluciones y surcos. Anormal?</strong></dt>
+	<dd><%=@report.displasium.circunvoluciones%></dd>
+	<dt><strong>Reformateo curvilíneo: patrón de surcos. Anormal?</strong></dt>
+	<dd><%=@report.displasium.circunvoluciones%></dd>
+	<h6>Conclusión: Displasia cortical en</h6>
+	<dt><strong>Circunvolución:</strong></dt>
+	<dd><%= @report.displasium.discircunvolucion%></dd>
+	<dt><strong>Lóbulo</strong></dt>
+	<dd><%=@report.displasium.dislobulo%></dd>
+	<dt><strong>Hemisferio</strong></dt>
+	<dd><%=@report.displasium.dishemisferio%></dd>
+  </dl>
+
+<h4>3. Tumor de bajo grado</h4>
+<dl class="dl-horizontal">
+	<dt><strong>Hiperintensidad en T2</strong></dt>
+	<dd><%=@report.tumor.hiperintensidad%></dd>
+	<dt><strong>Lesión bien definida</strong></dt>
+	<dd><%=@report.tumor.lesion%></dd>
+	<dt><strong>Efecto de masa</strong></dt>
+	<dd><%=@report.tumor.efecto_masa%></dd>
+	<dt><strong>Nódulo o quiste (simple o múltiple)</strong></dt>
+	<dd><%=@report.tumor.nodulo%></dd>
+	<dt><strong>Calcificaciones</strong></dt>
+	<dd><%=@report.tumor.calsificaciones%></dd>
+	<h6>Conclusión:</h6>
+	<dt><strong>Hallazgos sugestivos de tumor:</strong></dt>
+	<dd><%=@report.tumor.hallazgos%></dd>
+	<dt><strong>Ubicado en circunvolución:</strong></dt>
+	<dd><%=@report.tumor.circunvolucion%></dd>
+	<dt><strong>Lóbulo:</strong></dt>
+	<dd><%=@report.tumor.lobulo%></dd>
+	<dt><strong>Hemisferio:</strong></dt>
+	<dd><%=@report.tumor.hemisferio%></dd>
+</dl>
+
+<h4>4. Malformación vascular (MV)</h4>
+<dl class="dl-horizontal">
+	<dt><strong>Centro hiperintenso</strong></dt>
+	<dd><%=@report.malformacion.centro_hipert%></dd>
+	<dt><strong>Señal periférica de vacío</strong></dt>
+	<dd><%=@report.malformacion.senal_peri%></dd>
+	<dt><strong>Anillo hipointenso en T2 (deposito de hemosiderina)</strong></dt>
+	<dd><%=@report.malformacion.anillo_hipo%></dd>
+	<dt></strong>Vaso alimentando la malformación</strong></dt>
+	<dd><%=@report.malformacion.vaso%></dd>
+	<h6>Conclusiones</h6>
+	<dt><strong>Hallazgos sugestivos de MV</strong></dt>
+	<dd><%=@report.malformacion.hallazgo_mv%></dd>
+	<dt><strong>Ubicada en la circunvolución:</strong></dt>
+	<dd><%=@report.malformacion.circunvolucion%></dd>
+	<dt><strong>Lóbulo</strong></dt>
+	<dd><%=@report.malformacion.lobulo%></dd>
+	<dt><strong>Hemisferio</strong></dt>
+	<dd><%=@report.malformacion.hemisferio%></dd>
+  </dl>
+
+  <h4>4. Conclusión</h4>
+  <dl class="dl-horizontal">
+	<dt><strong>Observaciones Adicionales</strong></dt>
+	<dd><%=@report.conclusion.observaciones%></dd>
+	<dt><strong>RM NORMAL</strong></dt>
+	<dd><%=@report.conclusion.rm%></dd>
+    <dt><strong>Paciente con sospecha clínica de:</strong></dt>
+	<dd><%=@report.conclusion.sospecha%></dd>
+	<dt><strong>Correlación clínico imaginológica</strong></dt>
+	<dd><%=@report.conclusion.correlacion%></dd>
+</dl>
+
+<%= link_to 'Editar', edit_patient_report_path(@patient, @report, equipment: @report.equipment) ,class: 'btn btn-primary'%> |
+<%= link_to 'Atras', patient_reports_path(@patient), class: 'btn' %>

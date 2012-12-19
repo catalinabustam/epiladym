@@ -1,0 +1,52 @@
+<%- model_class = Malformacion -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:centro_hipert) %></th>
+      <th><%= model_class.human_attribute_name(:senal_peri) %></th>
+      <th><%= model_class.human_attribute_name(:anillo_hipo) %></th>
+      <th><%= model_class.human_attribute_name(:vaso) %></th>
+      <th><%= model_class.human_attribute_name(:hallazgo_mv) %></th>
+      <th><%= model_class.human_attribute_name(:circunvolucion) %></th>
+      <th><%= model_class.human_attribute_name(:lobulo) %></th>
+      <th><%= model_class.human_attribute_name(:hemisferio) %></th>
+      <th><%= model_class.human_attribute_name(:report_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @malformacions.each do |malformacion| %>
+      <tr>
+        <td><%= link_to malformacion.id, malformacion_path(malformacion) %></td>
+        <td><%= malformacion.centro_hipert %></td>
+        <td><%= malformacion.senal_peri %></td>
+        <td><%= malformacion.anillo_hipo %></td>
+        <td><%= malformacion.vaso %></td>
+        <td><%= malformacion.hallazgo_mv %></td>
+        <td><%= malformacion.circunvolucion %></td>
+        <td><%= malformacion.lobulo %></td>
+        <td><%= malformacion.hemisferio %></td>
+        <td><%= malformacion.report_id %></td>
+        <td><%=l malformacion.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_malformacion_path(malformacion), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      malformacion_path(malformacion),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_malformacion_path,
+            :class => 'btn btn-primary' %>

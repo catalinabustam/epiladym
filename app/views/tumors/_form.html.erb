@@ -1,0 +1,68 @@
+<%= form_for @tumor, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :hiperintensidad, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :hiperintensidad, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :lesion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :lesion, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :efecto_masa, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :efecto_masa, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :nodulo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nodulo, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :calsificaciones, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :calsificaciones, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :hallazgos, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :hallazgos, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :circunvolucion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :circunvolucion, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :lobulo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :lobulo, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :hemisferio, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :hemisferio, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :report_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :report_id, :class => 'number_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                tumors_path, :class => 'btn' %>
+  </div>
+<% end %>

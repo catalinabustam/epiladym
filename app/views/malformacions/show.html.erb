@@ -1,0 +1,37 @@
+<%- model_class = Malformacion -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:centro_hipert) %>:</strong></dt>
+  <dd><%= @malformacion.centro_hipert %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:senal_peri) %>:</strong></dt>
+  <dd><%= @malformacion.senal_peri %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:anillo_hipo) %>:</strong></dt>
+  <dd><%= @malformacion.anillo_hipo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:vaso) %>:</strong></dt>
+  <dd><%= @malformacion.vaso %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:hallazgo_mv) %>:</strong></dt>
+  <dd><%= @malformacion.hallazgo_mv %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:circunvolucion) %>:</strong></dt>
+  <dd><%= @malformacion.circunvolucion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lobulo) %>:</strong></dt>
+  <dd><%= @malformacion.lobulo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:hemisferio) %>:</strong></dt>
+  <dd><%= @malformacion.hemisferio %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:report_id) %>:</strong></dt>
+  <dd><%= @malformacion.report_id %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              malformacions_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_malformacion_path(@malformacion), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              malformacion_path(@malformacion),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

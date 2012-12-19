@@ -1,0 +1,30 @@
+<h4>3. Tumor de bajo grado</h4>
+<small>Zonas a ser inspeccionadas: Todos los lóbulos, predominantemente el lóbulo temporal</small>
+
+<h6>Hallazgos a explorar:</h6>
+
+<%= rf.simple_fields_for :tumor, @report.tumor do |f| %>
+
+  <%= f.input :hiperintensidad, collection: @laterality, as: :radio_buttons, item_wrapper_class: 'inline',
+                     label: 'Hiperintensidad en T2' %>
+
+  <%= f.input :lesion, collection: @laterality, as: :radio_buttons, item_wrapper_class: 'inline',
+                    label: 'Lesión bien definida:' %>
+
+  <%= f.input :efecto_masa, collection: @laterality, as: :radio_buttons, item_wrapper_class: 'inline',
+                    label: 'Efecto de masa:' %>
+
+  <%= f.input :nodulo, collection: @laterality, as: :radio_buttons, item_wrapper_class: 'inline',
+                    label: 'Nódulo o quiste (simple o múltiple):' %>
+
+  <%= f.input :calsificaciones, collection: @laterality, as: :radio_buttons, item_wrapper_class: 'inline',
+                    label: 'Calcificaciones:' %>
+
+  <h6>Conclusión:</h6>
+  <%= f.input :hallazgos, label: 'Hallazgos sugestivos de tumor:', :input_html => { :rows => 3 }  %>
+  <%= f.input :circunvolucion, label: 'Circunvolución:' %>
+  <%= f.input :lobulo, collection: @lobe, as: :select,default: 1, label: 'Lóbulo' %>
+  <%= f.input :hemisferio, collection: @hemisphere, as: :select, default: 1, label: 'Hemisferio' %>
+  
+
+<%end%>

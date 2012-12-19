@@ -1,0 +1,22 @@
+<h4>1. Esclerosis hipocampal:</h4>
+<small>Zonas a ser inspeccionadas: Lóbulo temporal mesial, hipocampo, giro parahipocampal, amígdala</small>
+<h6>Hallazgos a explorar:</h6>
+
+<%= rf.simple_fields_for :esclerosi, @report.esclerosi do |f| %>
+
+  <%= f.input :atrofia_sunj, collection: @laterality, as: :radio_buttons, item_wrapper_class: 'inline',
+                    label: 'Volumen del hipocampo al ojo desnudo. Atrofia?' %>
+
+  <%= f.input :hiperintensidad, collection: @laterality, as: :radio_buttons, item_wrapper_class: 'inline',
+                    label: 'Hiperintensidad en T2 y FLAIR:' %>
+
+  <%= f.input :estructura_anormal, collection: @laterality, as: :radio_buttons, item_wrapper_class: 'inline',
+                    label: 'Superficie y estructura interna del hipocampo en T1. Anormal?' %>
+
+  <%= f.input :estructura_anormal, label: 'Escriba el hallazgo extra hipocampal encontrado:' %>
+
+  <h6>Conclusión</h6>
+  <%= f.input :esclerosis, collection: @laterality, as: :radio_buttons, item_wrapper_class: 'inline',
+                    label: 'Esclerosis hipocampal?' %>
+
+<%end%>

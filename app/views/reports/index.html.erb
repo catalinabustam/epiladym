@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h3>Listado de reportes por <strong><%=current_user.name %></strong> para el paciente <strong><%= @patient.code %></strong></h3>
+  <div class="pull-right">
+ <%= link_to 'Listar pacientes', patients_path, class: 'btn'%>
+ </div>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Paciente</th>
+      <th>Equipo</th>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reports.each do |report| %>
+      <tr>
+        <td><strong><%= report.patient.code %></strong></td>
+        <td><%= report.equipment %></td>
+        <td><%= report.created_at %></td>
+
+		<td><%=link_to "Ver", patient_report_path(@patient,report), class: 'btn btn-primary enabled' %></td>
+		<td><%=link_to "Editar", edit_patient_report_path(@patient,report, equipment: report.equipment), class: 'btn btn-primary enabled' %></td>
+
+		<td><%= link_to 'Eliminar',
+                      patient_report_path(@patient,report),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => '¿Está seguro que quiere eliminar el reporte?')) },
+                      :class => 'btn btn-danger' %>
+        </td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

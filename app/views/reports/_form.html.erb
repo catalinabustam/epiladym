@@ -1,0 +1,37 @@
+<%= simple_form_for([@patient, @report]) do |f| %>
+
+  <!-- Esclerosis-->
+  <div class="well">
+    <%= render 'esclerosis/fields', rf: f %>
+  </div>
+
+  <!-- Displasia-->
+  <div class="well">
+  <%= render 'displasia/fields', rf: f %>
+  </div>
+
+  <!-- Tumor-->
+  <div class="well">
+  <%= render 'tumors/fields', rf: f %>
+  </div>
+
+  <!-- Malformacion vascular-->
+  <div class="well">
+  <%= render 'malformacions/fields', rf: f %>
+  </div>
+
+  <!-- Conclusiones-->
+  <div class="well">
+  <%= render 'conclusions/fields', rf: f %>
+  </div>
+
+  <!-- Campos escondidos comunes a todo -->
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :equipment, value: params[:equipment] %>
+  <%= f.hidden_field :patient_id, value: @patient.id %>
+
+  <div class="form-actions">
+    <%= f.submit 'Crear reporte', class: 'btn btn-primary' %>
+  </div>
+
+<% end %>

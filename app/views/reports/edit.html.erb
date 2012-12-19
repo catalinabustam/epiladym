@@ -1,0 +1,16 @@
+<div class="page-header lead">Editar reporte para el paciente <strong><%= @patient.code %></strong> en equipo <strong><%=@report.equipment %></strong></div>
+
+<blockquote><p>
+	<h4>Información clínica del paciente:</h4>
+	<%if @report.equipment=="3T" %>
+		<%=@patient.infoclinica3 %>
+	<%else%>
+		<%=@patient.infoclinica15%>
+	<%end%>
+</blockquote></p>
+
+<small>En cada paciente evalúe los siguientes 4 ítems. Después lea la petición del especialista y evalué lo que se solicita según la sospecha clínica de cada paciente Marque con una X en la pregunta de cada ítem si y sólo si considera que la resonancia presenta dichos hallazgos.</small>
+<br>
+<%= render :partial => 'form' %>
+
+<%= link_to 'Atras', patient_reports_path %>

@@ -1,0 +1,44 @@
+<%= form_for @conclusion, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :observaciones, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :observaciones, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :rm, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :rm, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :hemisferio, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :hemisferio, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sospecha, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :sospecha, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :correlacion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :correlacion, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :report_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :report_id, :class => 'number_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                conclusions_path, :class => 'btn' %>
+  </div>
+<% end %>

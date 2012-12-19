@@ -1,0 +1,68 @@
+<%= form_for @displasium, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :hiperintensidad, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :hiperintensidad, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :diferencicacion_grisblanca, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :diferencicacion_grisblanca, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :engrosamiento, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :engrosamiento, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :transmato, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :transmato, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :circunvoluciones, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :circunvoluciones, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :reformateo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :reformateo, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :discircunvolucion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :discircunvolucion, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :dislobulo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :dislobulo, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :dishemisferio, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :dishemisferio, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :report_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :report_id, :class => 'number_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                displasia_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,39 @@
+<%- model_class = Tumor -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:hiperintensidad) %>:</strong></dt>
+  <dd><%= @tumor.hiperintensidad %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lesion) %>:</strong></dt>
+  <dd><%= @tumor.lesion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:efecto_masa) %>:</strong></dt>
+  <dd><%= @tumor.efecto_masa %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nodulo) %>:</strong></dt>
+  <dd><%= @tumor.nodulo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:calsificaciones) %>:</strong></dt>
+  <dd><%= @tumor.calsificaciones %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:hallazgos) %>:</strong></dt>
+  <dd><%= @tumor.hallazgos %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:circunvolucion) %>:</strong></dt>
+  <dd><%= @tumor.circunvolucion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lobulo) %>:</strong></dt>
+  <dd><%= @tumor.lobulo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:hemisferio) %>:</strong></dt>
+  <dd><%= @tumor.hemisferio %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:report_id) %>:</strong></dt>
+  <dd><%= @tumor.report_id %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              tumors_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_tumor_path(@tumor), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              tumor_path(@tumor),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
