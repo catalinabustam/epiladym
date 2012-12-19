@@ -1,22 +1,31 @@
 <div class="page-header">
-  <h3>Listado de reportes por <strong><%=current_user.name %></strong> para el paciente <strong><%= @patient.code %></strong></h3>
+  <h3>Listado de reportes por <strong><%=current_user.name %></strong> para el paciente 
+	  <%params[:equipment]%>
+  	<%if params[:equipment]=="3T" %>
+  	<%="S#{@patient.cod3t}" %>
+  	<%else%>
+  	<%=@patient.code%>
+  	<%end%>
+	   
   <div class="pull-right">
- <%= link_to 'Listar pacientes', patients_path, class: 'btn'%>
+ <%= link_to 'Listar pacientes', reads_path, class: 'btn'%>
  </div>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Paciente</th>
-      <th>Equipo</th>
       <th>Fecha</th>
     </tr>
   </thead>
   <tbody>
+	  
     <% @reports.each do |report| %>
       <tr>
-        <td><strong><%= report.patient.code %></strong></td>
-        <td><%= report.equipment %></td>
+		  <%eq=report.equipment%>
+		  <%eqn=params[:equipment]%>
+		  <%if eq==eqn%>
+        <td><strong><%= show_report(report,params[:equipment],@patient) %></strong></td>
         <td><%= report.created_at %></td>
 
 		<td><%=link_to "Ver", patient_report_path(@patient,report), class: 'btn btn-primary enabled' %></td>
@@ -30,6 +39,7 @@
         </td>
 
       </tr>
+	  		<%end%>
     <% end %>
   </tbody>
 </table>

@@ -22,7 +22,7 @@
         <td>
           <%= study_button15(patient,'1.5T') %>
         </td>
-		<td><%=link_to "mostrar reportes", patient_reports_path(patient), class: 'btn btn-primary enabled' %></td>
+		<td><%=link_to "mostrar reportes", patient_reports_path(patient ,equipment: "1.5T"), class: 'btn btn-primary enabled' %></td>
 		
 	</tr>
 	<% end %>
@@ -35,7 +35,7 @@
 			<%patienti=Patient.find_by_cod3t(cod)%>
 			<td><strong><%= "S#{patienti.cod3t}" %></strong></td>
           <td>	<%= study_button3(patienti,'3T') %></td>
-		  <td><%=link_to "mostrar reportes", patient_reports_path(patienti), class: 'btn btn-primary enabled' %></td>
+		  <td><%=link_to "mostrar reportes", patient_reports_path(patienti ,equipment: "3T"), class: 'btn btn-primary enabled' %></td>
         
 
       </tr>

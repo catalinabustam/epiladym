@@ -8,4 +8,5 @@ class Patient < ActiveRecord::Base
     :infoclinica3,
     :cod3t
   has_many :reports
+  has_many :reads
 end

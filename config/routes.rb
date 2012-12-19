@@ -1,6 +1,6 @@
 Epilady::Application.routes.draw do
   authenticated :user do
-    root :to => 'patients#index'
+    root :to => 'reads#index'
   end
   root :to => "home#index"
   devise_for :users

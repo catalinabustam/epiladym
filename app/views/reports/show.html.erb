@@ -1,4 +1,10 @@
-<div class="page-header lead">Reporte para el paciente <strong><%= @patient.code %></strong> en equipo <strong><%=@report.equipment %></strong></div>
+<div class="page-header lead">Reporte para el paciente <strong>	
+  	<%if @report.equipment=="3T" %>
+  	<%="S#{@patient.cod3t}" %>
+  	<%else%>
+  	<%=@patient.code%>
+  	<%end%>
+</strong></div>
 
 <dl class="dl-horizontal">
   <dt><strong>Radiologo:</strong></dt>
@@ -101,4 +107,4 @@
 </dl>
 
 <%= link_to 'Editar', edit_patient_report_path(@patient, @report, equipment: @report.equipment) ,class: 'btn btn-primary'%> |
-<%= link_to 'Atras', patient_reports_path(@patient), class: 'btn' %>
+<%= link_to 'Atras', patient_reports_path(@patient, equipment: @report.equipment), class: 'btn' %>

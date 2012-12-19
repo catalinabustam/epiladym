@@ -9,7 +9,7 @@ class ReportsController < ApplicationController
   # GET /reports
   # GET /reports.json
   def index
-    @reports = Report.where(user_id: current_user.id)
+    @reports = Report.where(user_id: current_user.id, patient_id:@patient.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -90,7 +90,7 @@ class ReportsController < ApplicationController
     @report.destroy
 
     respond_to do |format|
-      format.html { redirect_to patient_reports_path }
+      format.html { redirect_to patient_reports_path(equipment: @report.equipment) }
       # format.json { head :no_content }
     end
   end

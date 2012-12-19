@@ -1,11 +1,11 @@
 class Report < ActiveRecord::Base
   belongs_to :user
   belongs_to :patient
-  has_one :conclusion
-  has_one :displasium
-  has_one :esclerosi
-  has_one :malformacion
-  has_one :tumor
+  has_one :conclusion, :dependent => :destroy
+  has_one :displasium, :dependent => :destroy
+  has_one :esclerosi, :dependent => :destroy
+  has_one :malformacion, :dependent => :destroy
+  has_one :tumor, :dependent => :destroy
   attr_accessible   :accession,
     :date,
     :equipment,
