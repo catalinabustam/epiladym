@@ -6,6 +6,10 @@
   	<%end%>
 </strong></div>
 
+ <div class="pull-right">
+<%= link_to 'Listar pacientes', reads_path, class: 'btn'%>
+</div>
+
 <dl class="dl-horizontal">
   <dt><strong>Radiologo:</strong></dt>
   <dd><%=@report.user.email %></dd>
