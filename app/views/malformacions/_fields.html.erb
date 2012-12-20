@@ -20,6 +20,9 @@
   <%= f.input :hallazgo_mv, label: 'Hallazgos sugestivos de MV tipo:' %>
   <%= f.input :circunvolucion, label: 'Circunvolución:' %>
   <%= f.input :lobulo, collection: @lobe, as: :select, default: 1, label: 'Lóbulo' %>
+  <em><%= f.input :lobulo2, collection: @lobe, as: :select,default: 1, label: 'Otro Lóbulo' %>
+  <%= f.input :lobulo3, collection: @lobe, as: :select,default: 1, label: 'Otro Lóbulo' %>
+  <%= f.input :lobulo4, collection: @lobe, as: :select,default: 1, label: 'Otro Lóbulo' %></em>
   <%= f.input :hemisferio, collection: @hemisphere, as: :select, default: 1, label: 'Hemisferio' %>
-  
+  <em><%= f.input :hemisferio2, collection: @hemisphere, as: :select, default: 1, label: 'Otro Hemisferio' %></em>
 <%end%>

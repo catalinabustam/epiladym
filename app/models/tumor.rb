@@ -10,4 +10,5 @@ class Tumor < ActiveRecord::Base
     :lobulo,
     :nodulo,
     :report_id
+    
 end

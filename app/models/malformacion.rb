@@ -8,5 +8,9 @@ class Malformacion < ActiveRecord::Base
     :report,
     :senal_peri,
     :vaso,
-    :report_id
+    :report_id,
+    :lobulo2,
+    :lobulo3,
+    :lobulo4,
+    :hemisferio2
 end
