@@ -26,8 +26,8 @@
 		
 	</tr>
 	<% end %>
-	
-	
+
+	<!-- LECTURA DE 3T -->
 	<%@code3T=*(31..60)%>
 	
     <% @code3T.each do |cod| %>
@@ -37,9 +37,11 @@
           <td>	<%= study_button3(patienti,'3T') %></td>
 		  <td><%=link_to "mostrar reportes", patient_reports_path(patienti ,equipment: "3T"), class: 'btn btn-primary enabled' %></td>
         
-
       </tr>
     <% end %>
+	
+	<!--LECTURA DUPLICADA-->
+	
 	
   </tbody>
 </table>
