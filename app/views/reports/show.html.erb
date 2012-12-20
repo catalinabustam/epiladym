@@ -5,7 +5,6 @@
   	<%=@patient.code%>
   	<%end%>
 </strong></div>
-
  <div class="pull-right">
 <%= link_to 'Listar pacientes', reads_path, class: 'btn'%>
 </div>
@@ -44,18 +43,32 @@
 	<dt><strong>Patrón de circunvoluciones y surcos. Anormal?</strong></dt>
 	<dd><%=@report.displasium.circunvoluciones%></dd>
 	<dt><strong>Reformateo curvilíneo: patrón de surcos. Anormal?</strong></dt>
-	<dd><%=@report.displasium.circunvoluciones%></dd>
+	<dd><%=@report.displasium.reformateo%></dd>
+	</dl>
 	<h6>Conclusión: Displasia cortical en</h6>
+	<dl class="dl-horizontal">
 	<dt><strong>Circunvolución:</strong></dt>
 	<dd><%= @report.displasium.discircunvolucion%></dd>
-	<dt><strong>Lóbulo</strong></dt>
+	<dt><strong>Lóbulo1</strong></dt>
 	<dd><%=@report.displasium.dislobulo%></dd>
-	<dt><strong>Hemisferio</strong></dt>
+	<dt><strong>Hemisferio1</strong></dt>
 	<dd><%=@report.displasium.dishemisferio%></dd>
-  </dl>
+	<dt><strong>Lóbulo2</strong></dt>
+	<dd><%=@report.displasium.dislobulo2%></dd>
+	<dt><strong>Hemisferio2</strong></dt>
+	<dd><%=@report.displasium.dishemisferio2%></dd>
+	<dt><strong>Lóbulo3</strong></dt>
+	<dd><%=@report.displasium.dislobulo3%></dd>
+	<dt><strong>Hemisferio3</strong></dt>
+	<dd><%=@report.displasium.dishemisferio3%></dd>
+	<dt><strong>Lóbulo4</strong></dt>
+	<dd><%=@report.displasium.dislobulo4%></dd>
+	<dt><strong>Hemisferio4</strong></dt>
+	<dd><%=@report.displasium.dishemisferio4%></dd>
+  	</dl>
 
 <h4>3. Tumor de bajo grado</h4>
-<dl class="dl-horizontal">
+	<dl class="dl-horizontal">
 	<dt><strong>Hiperintensidad en T2</strong></dt>
 	<dd><%=@report.tumor.hiperintensidad%></dd>
 	<dt><strong>Lesión bien definida</strong></dt>
@@ -66,7 +79,9 @@
 	<dd><%=@report.tumor.nodulo%></dd>
 	<dt><strong>Calcificaciones</strong></dt>
 	<dd><%=@report.tumor.calsificaciones%></dd>
+	</dl>
 	<h6>Conclusión:</h6>
+	<dl class="dl-horizontal">
 	<dt><strong>Hallazgos sugestivos de tumor:</strong></dt>
 	<dd><%=@report.tumor.hallazgos%></dd>
 	<dt><strong>Ubicado en circunvolución:</strong></dt>
@@ -75,10 +90,10 @@
 	<dd><%=@report.tumor.lobulo%></dd>
 	<dt><strong>Hemisferio:</strong></dt>
 	<dd><%=@report.tumor.hemisferio%></dd>
-</dl>
+	</dl>
 
 <h4>4. Malformación vascular (MV)</h4>
-<dl class="dl-horizontal">
+	<dl class="dl-horizontal">
 	<dt><strong>Centro hiperintenso</strong></dt>
 	<dd><%=@report.malformacion.centro_hipert%></dd>
 	<dt><strong>Señal periférica de vacío</strong></dt>
@@ -87,7 +102,9 @@
 	<dd><%=@report.malformacion.anillo_hipo%></dd>
 	<dt></strong>Vaso alimentando la malformación</strong></dt>
 	<dd><%=@report.malformacion.vaso%></dd>
+	</dl>
 	<h6>Conclusiones</h6>
+	<dl class="dl-horizontal">
 	<dt><strong>Hallazgos sugestivos de MV</strong></dt>
 	<dd><%=@report.malformacion.hallazgo_mv%></dd>
 	<dt><strong>Ubicada en la circunvolución:</strong></dt>
@@ -96,10 +113,22 @@
 	<dd><%=@report.malformacion.lobulo%></dd>
 	<dt><strong>Hemisferio</strong></dt>
 	<dd><%=@report.malformacion.hemisferio%></dd>
-  </dl>
+	<dt><strong>Lóbulo 2</strong></dt>
+	<dd><%=@report.malformacion.lobulo2%></dd>
+	<dt><strong>Hemisferio 2</strong></dt>
+	<dd><%=@report.malformacion.hemisferio2%></dd>
+	<dt><strong>Lóbulo 3</strong></dt>
+	<dd><%=@report.malformacion.lobulo3%></dd>
+	<dt><strong>Hemisferio 3</strong></dt>
+	<dd><%=@report.malformacion.hemisferio3%></dd>
+	<dt><strong>Lóbulo 4</strong></dt>
+	<dd><%=@report.malformacion.lobulo4%></dd>
+	<dt><strong>Hemisferio 4</strong></dt>
+	<dd><%=@report.malformacion.hemisferio4%></dd>
+  	</dl>
 
   <h4>4. Conclusión</h4>
-  <dl class="dl-horizontal">
+  	<dl class="dl-horizontal">
 	<dt><strong>Observaciones Adicionales</strong></dt>
 	<dd><%=@report.conclusion.observaciones%></dd>
 	<dt><strong>RM NORMAL</strong></dt>
@@ -108,7 +137,7 @@
 	<dd><%=@report.conclusion.sospecha%></dd>
 	<dt><strong>Correlación clínico imaginológica</strong></dt>
 	<dd><%=@report.conclusion.correlacion%></dd>
-</dl>
+	</dl>
 
 <%= link_to 'Editar', edit_patient_report_path(@patient, @report, equipment: @report.equipment) ,class: 'btn btn-primary'%> |
 <%= link_to 'Atras', patient_reports_path(@patient, equipment: @report.equipment), class: 'btn' %>

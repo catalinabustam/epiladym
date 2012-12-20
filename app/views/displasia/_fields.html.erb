@@ -26,11 +26,15 @@
   <%= f.input :discircunvolucion, label: 'Circunvolución:'%>
  
 <%= f.input :dislobulo, collection: @lobe, as: :select, default: 1,label: 'Lóbulo' %>
-<em><%= f.input :dislobulo2, collection: @lobe, as: :select, default: 1,label: 'Otro Lóbulo '%>
-<%= f.input :dislobulo3, collection: @lobe, as: :select, default: 1,label: 'Otro Lóbulo' %>
-<%= f.input :dislobulo4, collection: @lobe, as: :select, default: 1,label: 'Otro Lóbulo'%></em>
+<%= f.input :dishemisferio, collection: @hemisphere, as: :select, default: 1 ,label: 'Hemisferio' %>
+<em><%= f.input :dislobulo2, collection: @lobe, as: :select, default: 1,label: 'Lóbulo 2 '%>
+	<%= f.input :dishemisferio2, collection: @hemisphere, as: :select, default: 1,label: ' Hemisferio 2'%>
+<%= f.input :dislobulo3, collection: @lobe, as: :select, default: 1,label: 'Lóbulo 3' %>
+<%= f.input :dishemisferio3, collection: @hemisphere, as: :select, default: 1,label: 'Hemisferio 3'%>
+<%= f.input :dislobulo4, collection: @lobe, as: :select, default: 1,label: 'Lóbulo 4'%>
+<%= f.input :dishemisferio4, collection: @hemisphere, as: :select, default: 1,label: ' Hemisferio 4'%></em>
   
-  <%= f.input :dishemisferio, collection: @hemisphere, as: :select, default: 1 ,label: 'Hemisferio' %>
- <em> <%= f.input :dishemisferio2, collection: @hemisphere, as: :select, default: 1,label: 'Otro Hemisferio'%></em>
+
+ <em> </em>
 
 <% end %>

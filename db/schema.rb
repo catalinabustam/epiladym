@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121220182145) do
+ActiveRecord::Schema.define(:version => 20121220203137) do
 
   create_table "conclusions", :force => true do |t|
     t.text     "observaciones"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(:version => 20121220182145) do
     t.string   "dislobulo3"
     t.string   "dislobulo4"
     t.string   "dishemisferio2"
+    t.string   "dishemisferio3"
+    t.string   "dishemisferio4"
   end
 
   add_index "displasia", ["report_id"], :name => "index_displasia_on_report_id"
@@ -77,6 +79,8 @@ ActiveRecord::Schema.define(:version => 20121220182145) do
     t.string   "lobulo3"
     t.string   "lobulo4"
     t.string   "hemisferio2"
+    t.string   "hemisferio3"
+    t.string   "hemisferio4"
   end
 
   add_index "malformacions", ["report_id"], :name => "index_malformacions_on_report_id"

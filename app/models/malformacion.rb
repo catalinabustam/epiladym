@@ -12,5 +12,7 @@ class Malformacion < ActiveRecord::Base
     :lobulo2,
     :lobulo3,
     :lobulo4,
-    :hemisferio2
+    :hemisferio2,
+    :hemisferio3,
+    :hemisferio4
 end
