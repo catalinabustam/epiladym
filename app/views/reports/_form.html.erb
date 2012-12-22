@@ -29,6 +29,7 @@
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :equipment, value: params[:equipment] %>
   <%= f.hidden_field :patient_id, value: @patient.id %>
+  <%=f.hidden_field :label, value: params[:label]%>
 
   <div class="form-actions">
     <%= f.submit 'Crear reporte', class: 'btn btn-primary' %>

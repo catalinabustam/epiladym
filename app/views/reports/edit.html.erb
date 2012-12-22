@@ -1,10 +1,6 @@
 <div class="page-header lead">Editar reporte para el paciente
 	<strong>
-	<%if params[:equipment]=="3T" %>
-	  	<%="S#{@patient.cod3t}" %>
-	  	<%else%>
-	  	<%=@patient.code%>
-	  	<%end%>
+		<%=@report.label%>
 	</strong></div>
 	</strong>
 
@@ -22,4 +18,4 @@
 <br>
 <%= render :partial => 'form' %>
 
-<%= link_to 'Atras', patient_reports_path(equipment:@report.equipment) %>
+<%= link_to 'Atras', patient_reports_path(equipment:@report.equipment,label:params[:label]) %>

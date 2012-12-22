@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121220203137) do
+ActiveRecord::Schema.define(:version => 20121222181606) do
 
   create_table "conclusions", :force => true do |t|
     t.text     "observaciones"
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(:version => 20121220203137) do
     t.integer  "patient_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "label"
   end
 
   add_index "reports", ["patient_id"], :name => "index_reports_on_patient_id"

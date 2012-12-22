@@ -1,9 +1,5 @@
 <div class="page-header lead">Reporte para el paciente <strong>	
-  	<%if @report.equipment=="3T" %>
-  	<%="S#{@patient.cod3t}" %>
-  	<%else%>
-  	<%=@patient.code%>
-  	<%end%>
+  	<%=@report.label%>
 </strong></div>
  <div class="pull-right">
 <%= link_to 'Listar pacientes', reads_path, class: 'btn'%>
@@ -45,6 +41,7 @@
 	<dt><strong>Reformateo curvilíneo: patrón de surcos. Anormal?</strong></dt>
 	<dd><%=@report.displasium.reformateo%></dd>
 	</dl>
+	
 	<h6>Conclusión: Displasia cortical en</h6>
 	<dl class="dl-horizontal">
 	<dt><strong>Circunvolución:</strong></dt>
@@ -139,5 +136,5 @@
 	<dd><%=@report.conclusion.correlacion%></dd>
 	</dl>
 
-<%= link_to 'Editar', edit_patient_report_path(@patient, @report, equipment: @report.equipment) ,class: 'btn btn-primary'%> |
-<%= link_to 'Atras', patient_reports_path(@patient, equipment: @report.equipment), class: 'btn' %>
+<%= link_to 'Editar', edit_patient_report_path(@patient, @report, equipment: @report.equipment,label: @report.label) ,class: 'btn btn-primary'%> |
+<%= link_to 'Atras', patient_reports_path(@patient, equipment: @report.equipment,label: @report.label), class: 'btn' %>

@@ -57,6 +57,9 @@ class ReportsController < ApplicationController
   # POST /reports.json
   def create
     @report = Report.new(params[:report])
+    puts "aqui van los params"
+    puts params
+    puts "ya no mas"
 
     respond_to do |format|
       if @report.save
@@ -74,7 +77,7 @@ class ReportsController < ApplicationController
 
     respond_to do |format|
       if @report.update_attributes(params[:report])
-        format.html { redirect_to patient_report_path(@patient, @report, equipmet: @report[:equipment]), notice: 'Report was successfully updated.' }
+        format.html { redirect_to patient_report_path(@patient, @report, equipmet: @report[:equipment],label: @report[:label]), notice: 'Report was successfully updated.' }
         #format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -90,7 +93,7 @@ class ReportsController < ApplicationController
     @report.destroy
 
     respond_to do |format|
-      format.html { redirect_to patient_reports_path(equipment: @report.equipment) }
+      format.html { redirect_to patient_reports_path(equipment: @report.equipment,banddob:@report.banddob ,label:@report.label) }
       # format.json { head :no_content }
     end
   end

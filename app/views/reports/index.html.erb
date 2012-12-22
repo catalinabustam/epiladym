@@ -1,12 +1,7 @@
 <div class="page-header">
   <h3>Listado de reportes por <strong><%=current_user.name %></strong> para el paciente 
-	  <%params[:equipment]%>
-  	<%if params[:equipment]=="3T" %>
-  	<%="S#{@patient.cod3t}" %>
-  	<%else%>
-  	<%=@patient.code%>
-  	<%end%>
-	   
+	  <%=params[:label]%>
+  	  
   <div class="pull-right">
  <%= link_to 'Listar pacientes', reads_path, class: 'btn'%>
  </div>
@@ -22,24 +17,22 @@
 	  
     <% @reports.each do |report| %>
       <tr>
-		  <%eq=report.equipment%>
-		  <%eqn=params[:equipment]%>
-		  <%if eq==eqn%>
-        <td><strong><%= show_report(report,params[:equipment],@patient) %></strong></td>
-        <td><%= report.created_at %></td>
+		  <%if report.label==params[:label]%>
+			
+       			<td><strong><%=report.label %></strong></td>
+        		<td><%= report.created_at %></td>
+				<td><%=link_to "Ver", patient_report_path(@patient,report,label:params[:label]), class: 'btn btn-primary enabled' %></td>
+				<td><%=link_to "Editar", edit_patient_report_path(@patient,report, equipment: report.equipment,label:params[:label]), class: 'btn btn-primary enabled' %></td>
 
-		<td><%=link_to "Ver", patient_report_path(@patient,report), class: 'btn btn-primary enabled' %></td>
-		<td><%=link_to "Editar", edit_patient_report_path(@patient,report, equipment: report.equipment), class: 'btn btn-primary enabled' %></td>
-
-		<td><%= link_to 'Eliminar',
-                      patient_report_path(@patient,report),
+				<td><%= link_to 'Eliminar',
+                      patient_report_path(@patient,report,label:params[:label]),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => '¿Está seguro que quiere eliminar el reporte?')) },
                       :class => 'btn btn-danger' %>
-        </td>
+        		  </td>
 
       </tr>
-	  		<%end%>
+			<%end%>
     <% end %>
   </tbody>
 </table>

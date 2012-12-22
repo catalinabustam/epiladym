@@ -15,7 +15,10 @@ class Report < ActiveRecord::Base
     :displasium_attributes,
     :esclerosi_attributes,
     :malformacion_attributes,
-    :tumor_attributes
+    :tumor_attributes,
+    :banddob,
+    :label
+  
   accepts_nested_attributes_for :conclusion, :displasium, :esclerosi, :malformacion, :tumor
   # validates :equipment, :uniqueness => { :scope => :user_id, :message => "Usted ya ha reportado el estudio para el paciente en este equipo" }
 end
