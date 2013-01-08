@@ -1,3 +1,4 @@
+# encoding: utf-8
 class ReportsController < ApplicationController
 
   before_filter :find_patient
@@ -97,6 +98,13 @@ class ReportsController < ApplicationController
       # format.json { head :no_content }
     end
   end
+  
+  def print
+          
+          @report = Report.find(params[:report_id])
+          
+   end
+ 
 
   private
 

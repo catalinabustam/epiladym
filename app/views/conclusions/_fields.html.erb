@@ -2,7 +2,7 @@
 
 <%= rf.simple_fields_for :conclusion, @report.conclusion do |f| %>
 
-  <%= f.input :observaciones, label: 'Observaciones Adicionales:', :input_html => { :rows => 3 }  %>
+  <%= f.input :observaciones, label: 'Observaciones Adicionales:', :input_html => { :rows => 4 }  %>
 
   <%= f.input :rm, collection: ["normal", "anormal"], as: :radio_buttons, item_wrapper_class: 'inline',
                     label: 'RM Normal o anormal?' %>

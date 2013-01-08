@@ -1,0 +1,38 @@
+<div class="page-header lead">Reporte para el paciente: <strong>
+  	<br>
+	
+ 	<div class="pull-right">
+	 <img src="/images/logo_iatm.png" alt="iatm" />
+ 	</div>
+   	<br>&nbsp;&nbsp; <%=@patient.name%></strong>
+ 	<br>&nbsp; &nbsp;<%=@patient.patid%>
+	<br> &nbsp; &nbsp;Equipo: Philips Ingenia <%=@report.equipment%>esla	
+</div>
+<dl class="dl-horizontal">
+  <dt><strong>Radiologo:</strong></dt>
+  <dd><%=@report.user.name %></dd>
+  <dt><strong>Fecha del reporte:</strong></dt>
+  <dd><%=@report.created_at %></dd>
+  <br>
+  <div class="well">
+   
+  <blockquote><p>
+  	<h4>Información clínica del paciente:</h4>
+  	<%if @report.equipment=="3T" %>
+  		<%=@patient.infoclinica3 %>
+  	<%else%>
+  		<%=@patient.infoclinica15%>
+  	<%end%>
+  </blockquote></p>
+   </div>
+
+  <%= render :partial => 'form' %>
+  
+  
+  Firmado electrónicamente por<br>
+
+  JORGE ANDRÉS DELGADO DE BEDOUT<br>
+  Médico Radiólogo<br>
+  Reg. 5748<br>
+
+ 

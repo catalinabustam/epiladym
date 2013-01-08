@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'pdfkit'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -30,6 +31,8 @@ module Epilady
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
     config.autoload_paths += %W(#{config.root}/lib)
+    #config.autoload_paths << "#{Rails.root}/app/reports"
+   # config.autoload_paths << "#{Rails.root}/app/pdfs"
 
 
     # Only load the plugins named here, in the order given (default is alphabetical).
@@ -46,12 +49,14 @@ module Epilady
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password, :password_confirmation]
+    config.middleware.use "PDFKit::Middleware"
 
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true

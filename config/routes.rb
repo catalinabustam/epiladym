@@ -1,4 +1,5 @@
 Epilady::Application.routes.draw do
+        
   authenticated :user do
     root :to => 'reads#index'
   end
@@ -6,8 +7,11 @@ Epilady::Application.routes.draw do
   devise_for :users
   resources :users
   resources :reads
+  resources :prints
   resources :patients do
+          
     resources :reports do
+            get 'print'        
       resources :conclusions
       resources :tumors
       resources :malformacions

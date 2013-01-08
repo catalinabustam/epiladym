@@ -1,0 +1,23 @@
+
+<div class="page-header">
+  <h2>Generar reporte para imprimir</h2>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Paciente</th>
+      <th>Lecturas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><strong><%= patient.name %></strong></td>
+	<%report=@report.where(patient_id:patient.id, equipment:"3T").first%>
+	
+        <td><%=link_to "mostrar reporte", patient_report_print_path(patient,report), :format=> :pdf, class: 'btn btn-primary enabled' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

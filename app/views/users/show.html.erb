@@ -3,5 +3,8 @@
 <p>Email: <%= @user.email if @user.email %></p>
 
  <div class="pull-right">
-<%= link_to 'Listar pacientes', reads_path, class: 'btn'%>
+<%= link_to 'Imprimir reportes 3T', prints_path, class: 'btn'%>
 </div>
+
+
+<%= link_to 'Listar pacientes', reads_path, class: 'btn btn-primary'%>

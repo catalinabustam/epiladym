@@ -1,15 +1,17 @@
-<div class="page-header lead">Nuevo reporte para el paciente
- <strong>
-	 <%=params[:label]%>
-</strong> 
-</div>
+
+<div class="page-header lead">Editar reporte para el paciente
+	<strong>
+		<%=@report.label%>
+	</strong></div>
+	</strong>
+
 
 <blockquote><p>
 	<h4>Información clínica del paciente:</h4>
-	<%if params[:equipment]=="3T" %>
-	<%=@patient.infoclinica3 %>
+	<%if @report.equipment=="3T" %>
+		<%=@patient.infoclinica3 %>
 	<%else%>
-	<%=@patient.infoclinica15%>
+		<%=@patient.infoclinica15%>
 	<%end%>
 </blockquote></p>
 
@@ -17,11 +19,4 @@
 <br>
 <%= render :partial => 'form' %>
 
-
-
-
-<%= link_to 'Atras', patient_reports_path(equipment: params[:equipment], label:params[:label]) %>
-
-
-
-
+<%= link_to 'Atras', patient_reports_path(equipment:@report.equipment,label:params[:label]) %>
